@@ -1,91 +1,145 @@
-# AI Agent Team
+# 🤖 AI Agent Team - Business Execution Platform
 
-Autonomous code review and analysis system with specialized AI agents. Each agent uses a Claude model tier optimized for its role.
+Multi-team AI agent system for real business task execution across Engineering, Marketing, Design, Product, Operations, and more.
 
-## Agent Roster
+**Leadership:** CEO/Orchestrator, CISO, CTO  
+**Teams:** 8 teams (5 core + 3 optional) with 23+ agents  
+**Status:** ✅ Production Ready
 
-| Agent | Model | Role |
-|-------|-------|------|
-| 👑 **Orchestrator** | Opus | Team leader — coordinates agents, aggregates results |
-| 🔒 **Security** | Opus | Vulnerability detection (OWASP Top 10, injection, secrets) |
-| 🏗️ **Architecture** | Sonnet | Design patterns, SOLID, coupling analysis |
-| ⚡ **Performance** | Sonnet | Bottleneck detection, Big-O analysis, memory leaks |
-| 📝 **Code Quality** | Haiku | Style, naming, dead code, complexity |
-| 🧪 **Testing** | Sonnet | Coverage gaps, test quality, missing edge cases |
+---
 
-## Why Different Models?
+## 🚀 빠른 시작 (Quick Start)
 
-- **Opus** — Security can't afford false negatives. The orchestrator needs top-tier reasoning for final judgment.
-- **Sonnet** — Architecture, performance, and testing need solid analysis but don't require maximum capability.
-- **Haiku** — Code quality checks are pattern-based and benefit from speed over depth.
-
-## Quick Start
+### 1️⃣ 설치 (Installation)
 
 ```bash
-# Install
+# 저장소 Clone
+git clone https://github.com/felix675lt/ai-agent-team.git
+cd ai-agent-team
+
+# 가상환경 생성 및 활성화
+python3 -m venv venv
+source venv/bin/activate  # Mac/Linux
+# 또는
+venv\Scripts\activate  # Windows
+
+# 패키지 설치 (자동으로 Flask 포함)
 pip install -e .
-
-# Set API key
-export ANTHROPIC_API_KEY=your-key-here
-
-# Analyze current directory
-agent-team analyze .
-
-# Analyze specific path with JSON output
-agent-team analyze ./src --output json --save report.json
-
-# Run only security and performance agents
-agent-team analyze . -a security -a performance
-
-# Show team roster
-agent-team roster
-
-# Generate config file
-agent-team init
 ```
 
-## Configuration
+### 2️⃣ API 키 설정 (API Key Setup)
 
-Generate a config file with `agent-team init`, then customize:
+```bash
+# 환경변수로 설정 (권장)
+export ANTHROPIC_API_KEY="sk-ant-..."
 
-```yaml
-agents:
-  security:
-    name: Security Agent
-    model: claude-opus-4-6
-    enabled: true
-    max_files_per_run: 50
-    custom_rules:
-      - "Check for hardcoded AWS credentials"
-      - "Flag any use of eval()"
-
-parallel: true
-output_format: rich
-exclude_patterns:
-  - node_modules
-  - .git
-  - __pycache__
+# 또는 .env 파일 생성
+echo "ANTHROPIC_API_KEY=sk-ant-..." > .env
 ```
 
-## Output Formats
+### 3️⃣ 대시보드 실행 (Run Dashboard)
 
-- **rich** — Colorful terminal output with tables (default)
-- **json** — Machine-readable JSON report
-- **markdown** — Markdown report for documentation
-
-## Architecture
-
-```
-Orchestrator (Opus) ──┬── Security Agent (Opus)
-                      ├── Architecture Agent (Sonnet)
-                      ├── Performance Agent (Sonnet)
-                      ├── Code Quality Agent (Haiku)
-                      └── Testing Agent (Sonnet)
+```bash
+python simple_dashboard.py
 ```
 
-The Orchestrator discovers files, dispatches them to agents in parallel, and aggregates findings into a prioritized report. Critical findings are highlighted first.
+그 다음 브라우저에서:
+```
+http://localhost:8000
+```
 
-## Requirements
+---
 
-- Python 3.10+
-- Anthropic API key
+## 📊 팀 구조 (Team Structure)
+
+### 리더십 (Leadership)
+- 👑 **CEO/Orchestrator** - 조직 관리, 요청 분류
+- 🔐 **CISO** - 보안 검토
+- 🏗️ **CTO** - 아키텍처/성능 검토
+
+### 핵심 팀 (Core Teams)
+- 🛠️ **Engineering** - 기술 아키텍처, 시스템 설계
+- 📢 **Marketing** - 전략, 캠페인, 콘텐츠
+- 🎨 **Design** - UX/UI, 디자인 시스템
+- 📊 **Product** - 로드맵, 기능, 전략
+- ⚙️ **Operations** - 프로세스, HR, 재정
+
+### 선택적 팀 (Optional)
+- 📈 **Data & Analytics**
+- 💼 **Business Development**
+- 😊 **Customer Success**
+
+---
+
+## 💻 사용 방법 (Usage)
+
+### 웹 대시보드
+
+```bash
+python simple_dashboard.py
+# http://localhost:8000 에서 접속
+```
+
+### CLI 명령어
+
+```bash
+agent-team team-status
+agent-team execute "Engineering: 마이크로서비스 아키텍처 설계"
+```
+
+---
+
+## 🔧 문제 해결 (Troubleshooting)
+
+### Flask가 설치되지 않음
+
+```bash
+pip install flask
+```
+
+### 대시보드 접속 안 됨
+
+```bash
+# 포트 사용 확인
+lsof -i :8000
+# 프로세스 종료
+pkill -f simple_dashboard
+# 재실행
+python simple_dashboard.py
+```
+
+### API 키 오류
+
+```bash
+export ANTHROPIC_API_KEY="sk-ant-..."
+```
+
+---
+
+## 📁 프로젝트 구조
+
+```
+agent_team/
+├── agents/
+│   ├── leadership/
+│   ├── engineering/
+│   ├── marketing/
+│   ├── design/
+│   ├── product/
+│   ├── operations/
+│   ├── data_analytics/
+│   ├── business_development/
+│   └── customer_success/
+├── core/
+│   ├── models.py
+│   ├── dispatcher.py
+│   └── config.py
+├── cli.py
+├── simple_dashboard.py
+└── web_dashboard.py
+```
+
+---
+
+**Status:** ✅ Production Ready  
+**Last Updated:** 2026-03-15
