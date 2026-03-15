@@ -1,16 +1,17 @@
-# 🤖 AI Agent Team - Business Execution Platform
+# 🤖 AI 에이전트 팀 - 비즈니스 실행 플랫폼
 
-Multi-team AI agent system for real business task execution across Engineering, Marketing, Design, Product, Operations, and more.
+엔지니어링, 마케팅, 디자인, 제품, 운영 등 다양한 분야의
+실제 비즈니스 업무를 처리하는 다중 팀 AI 에이전트 시스템입니다.
 
-**Leadership:** CEO/Orchestrator, CISO, CTO  
-**Teams:** 8 teams (5 core + 3 optional) with 23+ agents  
-**Status:** ✅ Production Ready
+**리더십:** CEO/오케스트레이터, CISO, CTO
+**팀:** 8개 팀 (핵심 5개 + 선택적 3개), 23명 이상의 에이전트
+**상태:** ✅ 프로덕션 준비 완료
 
 ---
 
-## 🚀 빠른 시작 (Quick Start)
+## 🚀 빠른 시작
 
-### 1️⃣ 설치 (Installation)
+### 1️⃣ 설치
 
 ```bash
 # 저장소 Clone
@@ -27,7 +28,7 @@ venv\Scripts\activate  # Windows
 pip install -e .
 ```
 
-### 2️⃣ API 키 설정 (API Key Setup)
+### 2️⃣ API 키 설정
 
 ```bash
 # 환경변수로 설정 (권장)
@@ -37,7 +38,7 @@ export ANTHROPIC_API_KEY="sk-ant-..."
 echo "ANTHROPIC_API_KEY=sk-ant-..." > .env
 ```
 
-### 3️⃣ 대시보드 실행 (Run Dashboard)
+### 3️⃣ 대시보드 실행
 
 ```bash
 python simple_dashboard.py
@@ -50,28 +51,28 @@ http://localhost:8000
 
 ---
 
-## 📊 팀 구조 (Team Structure)
+## 📊 팀 구조
 
-### 리더십 (Leadership)
-- 👑 **CEO/Orchestrator** - 조직 관리, 요청 분류
+### 리더십
+- 👑 **CEO/오케스트레이터** - 조직 관리, 요청 분류
 - 🔐 **CISO** - 보안 검토
 - 🏗️ **CTO** - 아키텍처/성능 검토
 
-### 핵심 팀 (Core Teams)
-- 🛠️ **Engineering** - 기술 아키텍처, 시스템 설계
-- 📢 **Marketing** - 전략, 캠페인, 콘텐츠
-- 🎨 **Design** - UX/UI, 디자인 시스템
-- 📊 **Product** - 로드맵, 기능, 전략
-- ⚙️ **Operations** - 프로세스, HR, 재정
+### 핵심 팀
+- 🛠️ **엔지니어링** - 기술 아키텍처, 시스템 설계
+- 📢 **마케팅** - 전략, 캠페인, 콘텐츠
+- 🎨 **디자인** - UX/UI, 디자인 시스템
+- 📊 **제품** - 로드맵, 기능, 전략
+- ⚙️ **운영** - 프로세스, HR, 재정
 
-### 선택적 팀 (Optional)
-- 📈 **Data & Analytics**
-- 💼 **Business Development**
-- 😊 **Customer Success**
+### 선택적 팀
+- 📈 **데이터 분석**
+- 💼 **사업 개발**
+- 😊 **고객 성공**
 
 ---
 
-## 💻 사용 방법 (Usage)
+## 💻 사용 방법
 
 ### 웹 대시보드
 
@@ -84,12 +85,12 @@ python simple_dashboard.py
 
 ```bash
 agent-team team-status
-agent-team execute "Engineering: 마이크로서비스 아키텍처 설계"
+agent-team execute "엔지니어링: 마이크로서비스 아키텍처 설계"
 ```
 
 ---
 
-## 🔧 문제 해결 (Troubleshooting)
+## 🔧 문제 해결
 
 ### Flask가 설치되지 않음
 
@@ -141,5 +142,5 @@ agent_team/
 
 ---
 
-**Status:** ✅ Production Ready  
-**Last Updated:** 2026-03-15
+**상태:** ✅ 프로덕션 준비 완료
+**마지막 업데이트:** 2026-03-15
