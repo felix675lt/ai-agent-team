@@ -35,6 +35,7 @@ class AgentConfig:
     name: str
     role: str
     model: ModelTier
+    team_name: str = ""  # e.g., "Engineering Team", "Marketing Team"
     enabled: bool = True
     max_files_per_run: int = 50
     timeout_seconds: int = 120
