@@ -1,0 +1,25 @@
+[project]
+name = "ai-agent-team"
+version = "1.0.0"
+description = "AI Agent Team - Autonomous code review & analysis with specialized agents"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "felix675lt"}]
+dependencies = [
+    "anthropic>=0.40.0",
+    "click>=8.1.0",
+    "rich>=13.0.0",
+    "pyyaml>=6.0",
+    "gitpython>=3.1.0",
+]
+
+[project.scripts]
+agent-team = "agent_team.cli:main"
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["agent_team*"]
